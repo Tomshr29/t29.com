@@ -4,6 +4,7 @@ import Contact from '~/components/Contact'
 import Footer from '~/components/footer'
 import Menu from '~/components/Menu'
 import Pricing from '~/components/Pricing'
+import PricingPlans from '~/components/pricing-plans'
 import Text from '~/components/Text'
 
 const stats = [
@@ -35,19 +36,22 @@ export default function Home(props: { version: number }) {
 
       <Menu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
 
-      <div className="h-screen flex items-center justify-center border-b border-neutral-100">
+      <div className="h-screen flex items-center justify-start px-20 bg-black">
         <div className="w-full max-w-4xl">
-          <Text as="h1" className="text-8xl font-medium text-center text-black/90 mb-4">
-            A design agency with a twist
+          <Text
+            as="h1"
+            className="text-9xl font-medium tracking-tighter text-start leading-2 text-white  mb-4"
+          >
+            Boost your website's SEO.
           </Text>
-          <Text as="h1" className="hidden text-3xl font-semibold text-center text-black/90 mb-4">
+          <Text as="h1" className="hidden text-3xl font-semibold text-start text-white mb-4">
             Design subscriptions for everyone.
           </Text>
-          <Text as="p" className="text-xl text-neutral-700 text-center">
+          <Text as="p" className="text-xl text-neutral-300 text-start">
             Design subscriptions for everyone. Pause or cancel anytime.
           </Text>
-          <div className="flex w-full justify-center items-center mt-6">
-            <button className="bg-black text-white font-bold py-2.5 px-9 rounded-md shadow-lg ring-2 ring-gray-600 hover:bg-gray-800 transition duration-300 tracking-tight text-[17px]">
+          <div className="flex w-full justify-start items-center mt-6">
+            <button className="bg-blue-600 text-white font-bold py-2.5 px-9 rounded-md shadow-lg ring-2 ring-blue-500 hover:bg-gray-800 transition duration-300 tracking-tight text-[17px]">
               <Text as="h1" className="text-xl font-semibold text-center">
                 Get Started
               </Text>
@@ -77,6 +81,18 @@ export default function Home(props: { version: number }) {
       </div>
       <Contact />
       <Pricing />
+      <main>
+        <div className="mx-auto max-w-7xl bg-white px-4 pt-24 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-extrabold text-black sm:text-5xl sm:leading-tight sm:tracking-tight">
+            Pricing plans for teams of all sizes
+          </h2>
+          <p className="mt-4 max-w-3xl text-lg text-slate-500">
+            Choose an affordable plan that's packed with the best features for engaging your
+            audience, creating customer loyalty, and driving sales.
+          </p>
+        </div>
+        <PricingPlans />
+      </main>
       <Footer />
     </>
   )
